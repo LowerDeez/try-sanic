@@ -2,16 +2,19 @@ from sqlalchemy import (
     Column,
     String,
     Integer,
-    DateTime,
     Date,
     Boolean,
     Unicode
 )
 
-from app.database import DATABASE
+from app.database import Base
+
+__all__ = (
+    'User',
+)
 
 
-class User(DATABASE.Model):
+class User(Base):
     __tablename__ = 'users'
 
     id = Column(

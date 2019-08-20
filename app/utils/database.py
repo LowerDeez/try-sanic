@@ -23,6 +23,10 @@ __all__ = (
 
 @contextmanager
 def scoped_session():
+    """
+    Only with sqlalchemy
+    :return:
+    """
     session = Session()
     try:
         yield session

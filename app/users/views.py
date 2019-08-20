@@ -41,10 +41,11 @@ class UserView(HTTPMethodView):
         """
         # Get email key from json request.
         email = request.json.get('email')
+        password = request.json.get('password')
 
         # Create new user.
         with scoped_session() as session:
-            user = User(email=email)
+            user = User(email=email, password=password)
             session.add(user)
 
         # Return json response.
