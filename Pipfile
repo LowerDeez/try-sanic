@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 sanic = "*"
 alembic = "*"
+gino = "*"
+psycopg2 = "==2.7.7"
 
 [requires]
 python_version = "3.7"

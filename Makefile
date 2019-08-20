@@ -1,19 +1,13 @@
 init:
-	python3 -m venv venv; \
-	echo 'source venv/bin/activate' >> .env; \
-	echo 'export DATABASE_URL=""' >> .env; \
-	source ./venv/bin/activate; \
-	pip3 install -r requirements.txt; \
+	pipenv --python 3.6; \
+	pipenv install; \
 
 run:
-	python3 manage.py run
+	python main.py
 
-update_deps:
-	source ./venv/bin/activate; \
-	pip install --upgrade -r requirements.txt; \
-
+# alembic revision -m "Migration message" --autogenerate --head head
 revision:
-	alembic revision --autogenerate;
+	alembic revision --autogenerate
 
 upgrade:
 	alembic upgrade head
